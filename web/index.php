@@ -2,27 +2,95 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link href="microcms.css" rel="stylesheet" />
     <title>infolingo</title>
 </head>
 <body>
 <header>
     <h1>infolingo</h1>
 </header>
-<form action="action.php" method="post">
+
+<form action="" method="post">
     <p>
         Traduction :
-        <input type="text" name="traduction" />
-        <input type="submit" name="valider" />
+        <input type="text" name="translate" value="" />
+        <input type="submit" name="submit" />
     </p>
 </form>
 <?php
-$bdd = new PDO('mysql:host=localhost;dbname=infolingo;charset=utf8', 'root', '');
+
+session_start();
+
+$name = $_POST['translate'];
+
+$rand = rand(0,2);
+
+$TabEng = array ("Monday", "Tuesday", "Wednesday");
+$TabFra = array ("Lundi", "Mardi", "Mercredi");
+
+echo $TabEng[$rand];
+$aleatoire = $TabFra[$rand];
+echo $aleatoire;
+
+if ($name == $aleatoire) {
+    echo "<br> YES </br>";
+}
+else {
+    echo "<br> NO </br>";
+}
+
+
+
+
+
+/*$rand = rand(0,6);
+$count = count($JourSemaine);
+
+   $JourSemaine = array(
+        "Monday" => "Lundi",
+        "Tuesday" => "Mardi",
+        "Wednesday" => "Mercredi",
+        "Thursday" => "Jeudi",
+        "Friday" => "Vendredi",
+        "Saturday" => "Samedi",
+        "Sunday" => "Dimanche"
+    );*/
+
+
+/*for ($i = 0; $i < $count; $i++){
+    echo $count[$i];
+}*/
+
+/*$key = array_keys($JourSemaine);
+$value = array_values($JourSemaine);
+echo $key[$rand];
+echo $JourSemaine['Monday']*/
+
+/*echo $value;*/
+
+/*if ( $name == $keys[0]){
+    echo "<br> YES </br>";
+}
+else {
+    echo "<br> NO </br>";
+}*/
+
+
+
+?>
+<!--<form action="action.php" method="post">
+    <p>
+        Traduction :
+        <input type="text" name="translate" />
+        <input type="submit" name="submit" />
+    </p>
+</form>
+<?php
+/*$bdd = new PDO('mysql:host=localhost;dbname=infolingo;charset=utf8', 'root', '');
 $words = $bdd->query('SELECT * FROM word ORDER BY RAND()');
-foreach ($words as $word): ?>
+foreach ($words as $word): */?>
     <article>
-        <h3><?php echo $word['word'] ?></h3>
+        <h3><?php /*echo $word['word'] */?></h3>
     </article>
-<?php endforeach ?>
+--><?php /*endforeach */?>
 </body>
 </html>
