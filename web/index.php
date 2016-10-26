@@ -22,7 +22,9 @@ session_start();
 
 $name = $_POST['translate'];
 
-$rand = rand(0,2);
+/* ------------- ALGO 1 ------------ */
+
+/*$rand = rand(0,2);
 
 $TabEng = array ("Monday", "Tuesday", "Wednesday");
 $TabFra = array ("Lundi", "Mardi", "Mercredi");
@@ -39,42 +41,43 @@ else {
 }
 
 
+*/
+
+/*------------------ ALGO 2 --------------------*/
 
 
+if ( $name == $_SESSION['toto']){
+    echo "<br> YES </br>";
+}
+else {
+    echo "<br> NO </br>";
+}
 
-/*$rand = rand(0,6);
+$rand = rand(0,6);
 $count = count($JourSemaine);
 
-   $JourSemaine = array(
-        "Monday" => "Lundi",
-        "Tuesday" => "Mardi",
-        "Wednesday" => "Mercredi",
-        "Thursday" => "Jeudi",
-        "Friday" => "Vendredi",
-        "Saturday" => "Samedi",
-        "Sunday" => "Dimanche"
-    );*/
+$JourSemaine = array(
+    "Monday" => "Lundi",
+    "Tuesday" => "Mardi",
+    "Wednesday" => "Mercredi",
+    "Thursday" => "Jeudi",
+    "Friday" => "Vendredi",
+    "Saturday" => "Samedi",
+    "Sunday" => "Dimanche"
+);
 
 
 /*for ($i = 0; $i < $count; $i++){
     echo $count[$i];
 }*/
 
-/*$key = array_keys($JourSemaine);
+$key = array_keys($JourSemaine);
 $value = array_values($JourSemaine);
 echo $key[$rand];
-echo $JourSemaine['Monday']*/
+$_SESSION['toto'] = $value[$rand];
+/*echo $JourSemaine['Monday']*/
 
 /*echo $value;*/
-
-/*if ( $name == $keys[0]){
-    echo "<br> YES </br>";
-}
-else {
-    echo "<br> NO </br>";
-}*/
-
-
 
 ?>
 <!--<form action="action.php" method="post">
